@@ -1,0 +1,58 @@
+{
+  "name": "react-widget-template",
+  "version": "1.0.0",
+  "description": "React Widget Template",
+  "devDependencies": {
+    "liferay-npm-bundler": "^2.31.2",
+    "liferay-npm-build-support": "^2.31.2",
+    "copy-webpack-plugin": "4.6.0",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0",
+    "webpack-dev-server": "3.2.1",
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.1.0",
+    "react-scripts": "^5.0.1"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-router-dom": "^6.8.0"
+  },
+  "scripts": {
+    "build": "babel --source-maps -d build src && npm run copy-assets && liferay-npm-bundler",
+    "copy-assets": "lnbs-copy-assets",
+    "deploy": "npm run build && lnbs-deploy",
+    "start:lnbs": "lnbs-start",
+    "start": "react-scripts start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "portlet": {
+    "com.liferay.portlet.display-category": "category.sample",
+    "com.liferay.portlet.header-portlet-css": "/css/styles.css",
+    "com.liferay.portlet.instanceable": true,
+    "javax.portlet.name": "reactwidgettemplate",
+    "javax.portlet.security-role-ref": "power-user,user",
+    "javax.portlet.display-name": "React Widget Template"
+  },
+  "main": "index.js",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

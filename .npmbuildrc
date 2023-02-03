@@ -1,0 +1,7 @@
+{
+	"liferayDir": "/Users/martincizek/Dev/liferay/liferay-ce-portal-7.4.3.53-ga53",
+	"start": {
+		"dir": ".webpack",
+		"ejected": true
+	}
+}
