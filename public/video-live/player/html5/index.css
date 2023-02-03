@@ -1,0 +1,2260 @@
+@font-face {
+  font-family: playerFont;
+  src: 
+  	url('tv_sans.woff') format('woff'),
+  	url('tv_sans.ttf') format('truetype');
+}
+
+.playerMainShell {
+  z-index: 10001;
+  font-family: playerFont;
+  font-size: 15px;
+  color: white;
+  -webkit-touch-callout: none;/* iOS Safari */
+  -webkit-user-select: none;/* Chrome/Safari/Opera */
+  -moz-user-select: none;/* Firefox */
+  -ms-user-select: none;/* Internet Explorer/Edge */
+  user-select: none;
+  cursor: default;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.playerMainShell svg {
+	pointer-events: none;
+}
+
+.playerMainShell,
+.playerMainShell * {
+  outline: 0;
+}
+
+.playerMainShell.loadingMainScreenActive #loadingOverlay,
+.playerMainShell.videoMainScreenActive #video,
+.playerMainShell.videoMainScreenActive #overlay,
+.playerMainShell.errorMainScreenActive #errorOverlay,
+.playerMainShell.nextInSeriesMainScreenActive #nextInSeriesOverlay {
+  display: block;
+}
+
+.unskinnedPlayer .playerMainShell.loadingMainScreenActive #loadingOverlay,
+.unskinnedPlayer .playerMainShell.videoMainScreenActive #overlay,
+.unskinnedPlayer .playerMainShell.errorMainScreenActive #errorOverlay,
+.unskinnedPlayer .playerMainShell.nextInSeriesMainScreenActive #nextInSeriesOverlay {
+  display: none;
+}
+
+.playerMainShell #videoBackground{
+  z-index: -100;
+  background: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.playerMainShell #versionInfoOpener {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  top: 0;
+  left: 0;
+}
+.playerMainShell #videoShell{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*background: black;*/
+}
+.playerMainShell #seekBarTouchArea,
+.playerMainShell .seekBarIndex,
+.playerMainShell #addTvBtn,
+.playerMainShell #volumeBarShell,
+.playerMainShell #skipShell,
+.playerMainShell #overlay.clickThrough,
+.playerMainShell .cursorPointer,
+.playerMainShell #errorReloadShell,
+.playerMainShell #errorHelpShell {
+  cursor: pointer;
+}
+.playerMainShell #video {
+  display: none;
+  position: relative;
+  margin: auto;
+  /*top: -10px;
+  left: -100px;*/
+  width: 100%;
+  height: 100%;
+}
+.playerMainShell #audioShell #video {
+  visibility: hidden;
+}
+.playerMainShell #videoWrapper {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+.playerMainShell #overlay {
+  display: none;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.playerMainShell .controlsExited #overlay > *,
+.playerMainShell.hiddenOverlay #overlay > * {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.playerMainShell #overlay > .inactive,
+.playerMainShell.mobilePlayer.settingsScreenActive .overlayBtn,
+.playerMainShell.mobilePlayer.volumeScreenActive .overlayBtn,
+.playerMainShell.isVast #pauseBtn {
+	display: none; 
+}
+
+.playerMainShell #replayPoster {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.playerMainShell.hiddenOverlay #overlay > .autoPlay,
+.playerMainShell .controlsExited #overlay > .autoPlay,
+.playerMainShell.hiddenOverlay.afterTS #overlay > *,
+.playerMainShell.afterTS .controlsExited #overlay > *,
+.playerMainShell.hiddenOverlay #overlay > #skipShell,
+.playerMainShell .controlsExited #overlay > #skipShell {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.playerMainShell.replayScreenActive #replayBtn {
+	visibility: visible;
+	opacity: 1;
+    pointer-events: auto;
+}
+.playerMainShell.replayScreenActive #controls,
+.playerMainShell.replayScreenActive #gradientShell,
+.playerMainShell.replayScreenActive #gradientShell2 {
+	display: none;
+}
+.playerMainShell.replayScreenActive #replayPoster,
+.playerMainShell.afterTS #replayPoster {
+	display: block;
+}
+
+.playerMainShell #afterTimeShiftSvg1,
+.playerMainShell #afterTimeShiftSvg2,
+.playerMainShell #afterTimeShiftSvg3,
+.playerMainShell #afterTimeShiftSvg4 {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;  
+}
+
+.playerMainShell #afterTimeShift svg {
+  fill: rgba(14, 17, 29, 0.859);
+  font-size: 15px;
+}
+
+
+.playerMainShell.afterTS .subtitlesLayout2 #afterTimeShiftSvg1 ,
+.playerMainShell.afterTS .subtitlesLayout4 #afterTimeShiftSvg1 {
+  display: inline-block;
+  margin-left: 48px;
+  margin-top: -41px;
+  height: 82px;
+  width: 329px;
+}
+
+.playerMainShell.afterTS .subtitlesLayout5 #afterTimeShiftSvg2 {
+  display: inline-block;
+  margin-left: -121px;
+  margin-top: -41px;
+  height: 82px;
+  width: 332px;
+}
+
+.playerMainShell.afterTS .subtitlesLayout5 .overlayBtn {
+  margin-left: -204px;
+}
+
+.playerMainShell.afterTS .subtitlesLayout7 #afterTimeShiftSvg3  {
+  display: inline-block;
+  margin-left: -114px;
+  margin-top: -38px;
+  height: 76px;
+  width: 284px;
+}
+
+.playerMainShell.afterTS .subtitlesLayout7 .overlayBtn {
+  margin-left: -169px;
+}
+
+.playerMainShell.afterTS .subtitlesLayout8 #afterTimeShiftSvg4  {
+  display: inline-block;
+  margin-left: -74px;
+  margin-top: -43px;
+  height: 85px;
+  width: 190px;
+}
+
+.playerMainShell.afterTS .subtitlesLayout8 .overlayBtn {
+  margin-left: -124px;
+}
+
+.playerMainShell .overlayBtn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.playerMainShell .overlayBtn svg.circle {
+	fill: rgba(0,0,0,0.79)
+}
+.playerMainShell .overlayBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: none;
+  width: 114px;
+  height: 114px;
+  font-size: 64px;
+  color: #ffffff;
+  outline: none;
+}
+.playerMainShell .subtitlesLayout2 .overlayBtn {
+  margin: -57px;
+  width: 114px;
+  height: 114px;
+}
+.playerMainShell .subtitlesLayout4 .overlayBtn {
+  margin: -57px;
+  width: 114px;
+  height: 114px;
+}
+.playerMainShell .subtitlesLayout5 .overlayBtn {
+  margin: -48px;
+  width: 96px;
+  height: 96px;
+}
+.playerMainShell .subtitlesLayout7 .overlayBtn {
+  margin: -38px;
+  width: 76px;
+  height: 76px;
+}
+.playerMainShell .subtitlesLayout8 .overlayBtn {
+  margin: -24px;
+  width: 48px;
+  height: 48px;
+}
+.playerMainShell #customPlayBtn {
+  /*display: none;*/
+}
+.playerMainShell #customPlayBtnImage {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.playerMainShell #gradientShell {
+  z-index: -2;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(bottom, rgba(14,17,29,0.68), rgba(14,17,29,0));
+  background: -webkit-linear-gradient(bottom, rgba(14,17,29,0.68), rgba(14,17,29,0));
+  background: -o-linear-gradient(bottom, rgba(14,17,29,0.68), rgba(14,17,29,0));
+  background: -moz-linear-gradient(bottom, rgba(14,17,29,0.68), rgba(14,17,29,0));
+}
+.playerMainShell .subtitlesLayout2 #gradientShell {
+  height: 107px;
+}
+.playerMainShell .subtitlesLayout4 #gradientShell {
+  height: 107px;
+}
+.playerMainShell .subtitlesLayout5 #gradientShell {
+  height: 153px;
+}
+.playerMainShell .subtitlesLayout7 #gradientShell,
+.playerMainShell .subtitlesLayout7 #gradientShell2 {
+  height: 91px;
+}
+.playerMainShell .subtitlesLayout8 #gradientShell,
+.playerMainShell .subtitlesLayout8 #gradientShell2 {
+  height: 80px;
+}
+.playerMainShell.breakpoint3 #gradientShell2 {
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(top, rgba(14,17,29,0.68), rgba(14,17,29,0));
+  background: -webkit-linear-gradient(top, rgba(14,17,29,0.68), rgba(14,17,29,0));
+  background: -o-linear-gradient(top, rgba(14,17,29,0.68), rgba(14,17,29,0));
+  background: -moz-linear-gradient(top, rgba(14,17,29,0.68), rgba(14,17,29,0));
+}
+.playerMainShell #controls {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.playerMainShell #controls > * {
+	cursor: default;
+}
+.playerMainShell #seekBarAndSwitch {
+  display: inline-block;
+  padding-top: 0px;
+}
+.playerMainShell #timeShiftButtons {
+  display: inline-block;
+  float: right;
+}
+.playerMainShell #seekBarShell {
+  overflow: hidden;
+  display: none;
+  position: relative;
+  padding: 0px 0px 0 8px;
+  height: 100%;
+}
+.playerMainShell #totalTimeInfo,
+.playerMainShell #remainingTimeInfo,
+.playerMainShell #seekBarArea {
+	margin-top: 10px;
+}
+.playerMainShell.largeControlsIcons #totalTimeInfo,
+.playerMainShell.largeControlsIcons #remainingTimeInfo,
+.playerMainShell.largeControlsIcons #seekBarArea {
+	margin-top: 13px;
+}
+.playerMainShell #seekBarTrackShell {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0 4px;
+}
+.playerMainShell #seekBarArea {
+  position: relative;
+}
+.playerMainShell .seekElapsed {
+  float: left;
+  position: relative;
+  display: inline-block;
+}
+.playerMainShell .seekBuffered {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.playerMainShell .seekNonElapsed {
+  overflow: hidden;
+}
+
+.playerMainShell .seekBarTimeInfo {
+  font-size: 15px;
+  padding: 2px 8px 0px 8px;
+  background: transparent;
+  pointer-events: none;
+}
+
+.playerMainShell .hideTimeInfo .seekBarTimeInfo {
+  display: none;
+}
+
+.playerMainShell .seekNonElapsed .seekBarTimeInfo {
+  float: left;
+}
+
+.playerMainShell .lowSeekBarValue .seekElapsed .seekBarTimeInfo {
+  display: none;
+}
+
+.playerMainShell .seekElapsed .seekBarTimeInfo {
+  float: right;
+}
+
+.playerMainShell .highSeekBarValue .seekNonElapsed .seekBarTimeInfo {
+  display: none;
+}
+
+.playerMainShell .seekBarLine {
+  position: relative;
+  overflow: hidden;
+  height: 18px;
+  z-index: 0;  
+}
+
+.playerMainShell .seekBarLine div {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  top: 7px;
+}
+
+.playerMainShell.seekScreenActive #seekBarShell .seekBarLine div {
+  height: 100%;
+  top: 0;
+}
+
+.playerMainShell .seekNonElapsed .seekBarLine div {
+  background: rgba(255, 255, 255, 0.478);
+}
+
+.playerMainShell .seekBarIndex {
+  position: absolute;
+  width: 3.001px;
+  height: 4px;
+  bottom: 7px;
+}
+.playerMainShell.seekScreenActive #seekBarShell .seekBarIndex {
+  height: 100%;
+  bottom: 0;
+}
+.playerMainShell #seekBarThumbCircle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin: -4px;
+  width: 8px;
+  height: 8px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  z-index: 1;
+}
+.playerMainShell.seekScreenActive #seekBarThumbCircle {
+  display: none;
+}
+
+.playerMainShell #previewImageShell {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  z-index: 10;
+  width: 128px;  
+  padding: 2px;
+  background-color: rgba(14,17,29,0.788);
+}
+.playerMainShell #previewImageText {
+  padding: 4px 4px 6px 4px;
+  color: white;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.playerMainShell #previewImage {
+  width: 128px;
+  height: 72px;
+}
+.playerMainShell #previewImageTime {
+  position: absolute;
+  bottom: -12px;
+  height: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.playerMainShell #previewImageTimeText {
+  display: inline-block;
+  height: 15px;
+  padding: 3px 5px 2px 5px;
+  background-color: rgba(14,17,29,0.788);
+  color: white;
+  font-size: 15px;
+}
+.playerMainShell #seekBarFocusTarget {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+}
+.playerMainShell #seekBar {
+	display: none;
+}
+.playerMainShell #seekBarTouchArea {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width:100%;
+  height:37px;
+  background: transparent;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ms-touch-select: none;
+  user-select: none;
+}
+.playerMainShell.breakpoint2 #seekBarTouchArea,
+.playerMainShell.breakpoint3 #seekBarTouchArea {
+	top: -13px;
+	height: 44px;
+}
+.playerMainShell.isVast #seekBarTouchArea {
+	display: none;
+}
+.playerMainShell #seekBarCursor {
+  display: none;
+  position: absolute;
+  left: 20px;
+  width: 1.1px;
+  height: 25px;
+  background: white;
+  pointer-events: none;
+  bottom: 13px;
+}
+.playerMainShell #totalTimeInfo,
+.playerMainShell #remainingTimeInfo {
+  float: right;
+  font-size: 15px;
+  padding: 2px 12px 0 6px;
+  vertical-align: middle;
+  height: 100%;
+}
+.playerMainShell #remainingTimeInfo {
+	display: none;
+}
+
+.playerMainShell .controlBtn {
+  position: relative;
+  height: 18px;
+ }
+
+.playerMainShell .controlBtnBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  display: none;
+  background: rgba(14, 17, 29, 0.86);
+  z-index: -1;
+}
+.playerMainShell.breakpoint1 .controlBtnBackground,
+.playerMainShell.breakpoint2 .controlBtnBackground {
+  border-radius: 0 0 3px 3px;
+}
+.playerMainShell.breakpoint3 .controlBtnBackground {
+  border-radius: 3px 3px 0 0;
+}
+.playerMainShell.smallControlsIcons #settingsShell .controlBtnBackground {
+  height: 37px;
+}
+.playerMainShell.largeControlsIcons #settingsShell .controlBtnBackground {
+  height: 45px;
+}
+.playerMainShell.settingsScreenActive.settingsLayout1 #settingsShell .controlBtnBackground,
+.playerMainShell.settingsScreenActive.settingsLayout2 #settingsShell .controlBtnBackground,
+.playerMainShell.volumeScreenActive #volumeShell .controlBtnBackground,
+.playerMainShell.hbbTvActive #hbbTvShell .controlBtnBackground,
+.playerMainShell.hbbTvScreenActive #hbbTvShell .controlBtnBackground {
+	display: block;
+}
+.playerMainShell #videoButtons {
+  position: relative;
+  display: inline-block;
+}
+.playerMainShell.breakpoint1 #videoButtons {
+  padding-right: 4px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-top: 1px;
+}
+
+.playerMainShell .videoButtonShell{
+  display: none;
+  position: relative;
+} 
+.playerMainShell.smallControlsIcons .videoButtonShell {
+  padding: 9px;
+}
+.playerMainShell.largeControlsIcons .videoButtonShell {
+  padding: 13px 15px
+}
+.playerMainShell .videoButtonShell svg {
+  height: 18px;
+  width: 18px;
+}
+.playerMainShell #videoButtons svg {
+  fill: #ffffff;
+}
+.playerMainShell #videoButtons input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.playerMainShell #timeShiftButtons {
+  padding-top: 1px;
+}
+
+.playerMainShell #liveShell {
+  padding-top: 11px;
+  padding-bottom: 7px;
+}
+.playerMainShell.smallControlsIcons #liveShell {
+  padding-left: 0;
+  padding-right: 6px;
+}
+
+.playerMainShell #backInTimeShell{
+  padding-right: 11px;
+  padding-top: 11px;
+  padding-bottom: 7px;
+}
+
+.playerMainShell.largeControlsIcons #backInTimeShell{
+  padding-top: 15px;
+  padding-bottom: 11px;
+}
+
+
+.playerMainShell #liveShell.isLive  {
+  border-radius: 3px;
+  background: rgba(14,17,29,0.86);
+  cursor: default;
+  padding-left: 6px;
+}
+.playerMainShell.largeControlsIcons #liveShell {
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 11px;  
+  padding-top: 15px;
+  border-radius: 3px 0 0 0;
+}
+
+.playerMainShell #backInTimeBtn,
+.playerMainShell #liveBtn {
+  white-space: nowrap;
+  padding: 4px 0px;
+}
+
+.playerMainShell #liveBtn {
+  padding-left: 9px;
+}
+.playerMainShell #liveImage {
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 3px;
+  background: transparent;
+  border: white solid 1px;
+}
+.playerMainShell .isLive #liveImage{
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  background: red;
+  border: none;
+}
+.playerMainShell #backInTimeImage svg{
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+.playerMainShell #backInTimeBtn {
+  padding-left: 23px;
+}
+.playerMainShell #backInTimeImage {
+  position: absolute;
+  top: -1px;
+}
+.playerMainShell #newWindowShell {
+	display: inline-block;
+}
+.playerMainShell.inNewWindow #newWindowShell,
+.playerMainShell.mobilePlayer #newWindowShell,
+.playerMainShell.hbbTvActive #newWindowShell {
+	display: none;
+}
+.playerMainShell #fullScreenShell {
+	display: inline-block;
+}
+
+body.iOSfullscreen {
+	width: 100%;
+	height: 100%;
+	overflow: hidden !important;
+	position: fixed;
+}
+
+body.iOSfullscreen .playerMainShell {
+	position: fixed;
+	left: 0;
+	top: 0;		
+	width: 100%;
+	height: 100%;
+}
+.playerMainShell.hbbTvActive #fullScreenShell,
+.playerMainShell.hbbTvActive #subtitlesShell {
+	display: none;
+}
+.playerMainShell #settingsDiv {
+  display: none;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  background: rgba(14,17,29,0.859);
+  border-radius: 4px;
+  z-index: 2;
+}
+.playerMainShell.settingsScreenActive #settingsDiv {
+	display: block;
+}
+.playerMainShell #settingsDiv.innerPageActive {
+	text-align: left;
+}
+.playerMainShell .innerPageActive .settingsColumn {
+	display: none;
+}
+.playerMainShell #settingsInnerPage {
+  display: none;
+  position: relative;
+  padding: 26px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.playerMainShell.settingsLayout3 #settingsInnerPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.playerMainShell .innerPageActive #settingsInnerPage {
+	display: block;
+}
+.playerMainShell.settingsLayout1 .innerPageActive #settingsInnerPage,
+.playerMainShell.settingsLayout2 .innerPageActive #settingsInnerPage {
+	display: table;
+}
+.playerMainShell #settingsInnerPageCentering {
+	display: block;
+}
+.playerMainShell.settingsLayout1 .innerPageActive #settingsInnerPageCentering,
+.playerMainShell.settingsLayout2 .innerPageActive #settingsInnerPageCentering {
+	display: table-cell;
+	vertical-align: middle;
+}
+.playerMainShell #settingsInnerPageBackground {
+  background: rgba(14,17,29,0.961);
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  border-radius: 2px;
+}
+.playerMainShell.settingsLayout4 #settingsInnerPageBackground {
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.playerMainShell .addTvActive #addTvDiv {
+	display: block;
+	width: 100%;
+}
+.playerMainShell #addTvDiv {
+  position: relative;
+  display: none;
+  text-align: left;
+  white-space: normal;
+  font-size: 14px;
+}
+.playerMainShell .addTvLayout3 #addTvDiv,
+.playerMainShell .addTvLayout4 #addTvDiv,
+.playerMainShell .addTvLayout5 #addTvDiv,
+.playerMainShell .addTvLayout6 #addTvDiv {
+  width: 100%;
+  box-sizing: border-box;
+}
+.playerMainShell #addTvTitle {
+  font-size: 17px;
+  color: white;
+}
+.playerMainShell .addTvLayout2 #addTvTitle {
+	padding-bottom: 17px;
+}
+.playerMainShell .addTvLayout3 #addTvTitle {
+	padding-bottom: 44px;
+}
+.playerMainShell .addTvLayout4 #addTvTitle {
+	padding-bottom: 27px;
+}
+.playerMainShell .addTvLayout5 #addTvTitle {
+	padding-bottom: 11px;
+}
+.playerMainShell .addTvStep,
+.playerMainShell #addTvInfo {
+	position: relative;
+	margin: 15px 0 0 0;
+	padding-left: 42px;
+	max-width: 240px;
+    color: rgba(256,256,256,0.843);
+    line-height: 23px;
+}
+.playerMainShell .addTvLayout2 .addTvStep {
+	margin-right: 236px;
+}
+.playerMainShell .addTvLayout5 .addTvStep {
+	margin: 21px 0 0 0;
+}
+.playerMainShell .addTvLayout5 #addTvInfo {
+	margin: 33px 0 0 0;
+}
+.playerMainShell .addTvLayout5 #addTvStep1,
+.playerMainShell .addTvLayout5 #addTvStep2 {
+	display: inline-block;
+	width: 49.5%;
+	box-sizing: border-box;
+}
+.playerMainShell .addTvLayout5 #addTvStep3 {
+	display: inline-block;
+}
+.playerMainShell .addTvLayout2 #addTvInfo,
+.playerMainShell .addTvLayout3 #addTvInfo,
+.playerMainShell .addTvLayout4 #addTvInfo {
+	position: absolute;
+	margin: 0;
+	padding-left: 0;
+	max-width: 172px;
+}
+.playerMainShell .addTvLayout2 #addTvInfo {
+	bottom: 26px;
+	right: 31px;
+}
+.playerMainShell .addTvLayout3 #addTvInfo,
+.playerMainShell .addTvLayout4 #addTvInfo {
+	bottom: 0;
+	right: 0;
+}
+.playerMainShell .addTvLayout5 #addTvStep3,
+.playerMainShell .addTvLayout5 #addTvInfo {
+	max-width: initial;
+}
+.playerMainShell .addTvStepIcon {
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+.playerMainShell .addTvLayout2 #addTvInfo .addTvStepIcon,
+.playerMainShell .addTvLayout3 #addTvInfo .addTvStepIcon,
+.playerMainShell .addTvLayout4 #addTvInfo .addTvStepIcon {
+  top: -32px;
+}
+.playerMainShell .addTvStepIcon svg {
+  position:absolute;
+  left: 0;
+  top: -3px;
+  fill-opacity: 0;
+  stroke: rgba(256,256,256,0.761);
+  stroke-width: 1.3px;
+  width: 28px;
+  height: 28px;
+}
+.playerMainShell #addTvInfo .addTvStepIcon svg {
+  fill: white;
+  fill-opacity: 1;
+  stroke-width: 0;
+}
+.playerMainShell #addTvInfo .addTvStepIcon svg#addTvInfoIcon {
+  position:absolute;
+  stroke-width: 0;
+  left: 7px;
+  top: 3px;
+  fill: black;
+  width: 14px;
+  height: 14px;
+}
+.playerMainShell #addTvInfo .addTvStepIcon #addTvInfoIcon use>svg { /* firefox bug workaround */
+  fill: black;
+}
+.playerMainShell #addTvCodeInputShell {
+	padding-top: 9px;
+}
+.playerMainShell .addTvLayout5 #addTvCodeInputShell {
+	padding: 0 0 0 9px;
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.playerMainShell #addTvCodeInput {
+	width: 226px;
+	height: 35px;
+	border: 0;
+	border-radius: 3px;
+	background: rgb(214,214,214);
+	color: black;
+	text-align: center;
+	font-size: 15px;
+    font-family: playerFont;
+}
+.playerMainShell .addTvLayout5 #addTvCodeInput,
+.playerMainShell .addTvLayout6 #addTvCodeInput {
+	width: 170px;
+}
+.playerMainShell #addTvDiv a:link,
+.playerMainShell #addTvDiv a:visited,
+.playerMainShell #addTvDiv a:hover,
+.playerMainShell #addTvDiv a:active {
+	color: white;
+}
+.playerMainShell .removeTvActive #removeTvDiv {
+	display: block;
+	width: 100%;
+}
+.playerMainShell #removeTvDiv {
+  position: relative;
+  display: none;
+  text-align: left;
+  white-space: normal;
+  font-size: 14px;
+}
+.playerMainShell #removeTvTitle {
+  font-size: 17px;
+  color: white;
+}
+.playerMainShell #removeTvInfo {
+	color: rgba(255,255,255,0.651);
+	margin: 33px 0;
+	line-height: 17px;
+}
+.playerMainShell #removeTvConfirm {
+	display: inline-block;
+	color: white;
+	padding: 10px 19px;
+	border: 1px solid white;
+	border-radius: 2px;
+}
+.playerMainShell #removeTvCancel {
+	display: inline-block;
+	color: white;
+	padding: 11px 0 11px 0;
+	float: right;
+	text-decoration: underline;
+}
+.playerMainShell #settingsControls {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 48px;
+  width: 33px;
+}
+.playerMainShell #settingsCloseButton {
+	margin-top: 14px;
+}
+.playerMainShell #settingsCloseButton svg {
+  fill: white;
+  width: 15px;
+  height: 15px;
+  padding-top: 3px;
+}
+.playerMainShell #settingsContentWrapper {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  max-height: 100%;
+  width: 100%;
+  white-space: normal;
+}
+.playerMainShell #settingsContent {
+  display: table;
+  border-spacing: 0;
+  border-collapse: separate;
+  text-align: left;
+  padding: 11px 6px 11px 6px;
+}
+.playerMainShell .innerPageActive #settingsContent {
+  padding: 0;
+  width: 100%;
+}
+.playerMainShell .settingsColumn {
+  display: table-cell;
+  height: 100%;
+}
+.playerMainShell #leftColumn {
+}
+.playerMainShell #rightColumn {
+  padding-left: 20px;
+}
+.playerMainShell #leftColumn .columnContent {
+  height: 100%;
+}
+.playerMainShell.settingsLayout1 #settingsSubtitles,
+.playerMainShell.settingsLayout1 #settingsAudio,
+.playerMainShell.settingsLayout2 #settingsSubtitles,
+.playerMainShell.settingsLayout2 #settingsAudio{
+  margin-top: 20px;
+}
+.playerMainShell.settingsLayout3 #settingsSubtitles,
+.playerMainShell.settingsLayout3 #settingsAudio{
+  margin-bottom: 15px;
+}
+
+.playerMainShell .settingsElement.notAvailable {
+  display: none;
+}
+.playerMainShell .settingsSelectorList {
+  width: 100%;
+}
+.playerMainShell .settingsElementTitle {
+  padding: 0 10px 9px 14px;
+  color: rgba(256,256,256,0.651);
+}
+.playerMainShell .settingsElementArrows {
+  display: none;
+  z-index: 2;
+  pointer-events: none;
+}
+.playerMainShell .dropDown .settingsElementArrows {
+  display: block;
+  position: absolute;
+}
+.playerMainShell .settingsElementArrows svg {
+  /*width: 20px;
+  height: 20px;*/
+  display: block;
+  width: 12px;
+  height: 7px;
+}
+.playerMainShell .settingsElementArrows .arrowDown {
+  fill: white;
+}
+.playerMainShell .settingsElementArrows .arrowUp {
+  fill: black;
+}
+.playerMainShell .settingsElementArrows .arrowUp {
+  display: none;
+}
+.playerMainShell .dropDownOpen .settingsElementArrows .arrowDown {
+  display: none;
+}
+.playerMainShell .dropDownOpen .settingsElementArrows .arrowUp {
+  display: block;
+}
+.playerMainShell.settingsLayout4 #hbbtvWrapper {
+	display: table-cell;
+}
+/** rozbalovaci selecty **/
+.playerMainShell .settingsSelectorShell {
+  position: relative;
+  display: block;
+}
+.playerMainShell .settingsSelector {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+.playerMainShell .settingsSelectorOpenIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+.playerMainShell .settingsSelectorPlaceholder {
+  display: none;
+}
+.playerMainShell .dropDown .settingsSelectorPlaceholder {
+  display: block;
+  min-width: 150px;
+}
+.playerMainShell .dropDown .settingsSelectorList {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.playerMainShell .dropDownOpen .settingsSelectorList {
+  display: block;
+}
+.playerMainShell .dropDown .settingsSelectorOpenIcon {
+  display: block;
+}
+.playerMainShell .dropDown .listItem {
+  margin-bottom: 0;
+}
+/* podbarveni polozek */
+.playerMainShell .dropDown .listItem.selectedListItem {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  /** FIXME **/
+}
+.playerMainShell .dropDown .settingsSelectorList .listItem {
+  background: white;
+  color: black;
+}
+
+.playerMainShell .dropDown .settingsSelectorList .listItem:hover {
+  background: #ebebeb;
+  color: black;
+  /** FIXME **/
+}
+.playerMainShell .listItem {
+  position: relative;
+  background: rgba(255,255,255,0.302);
+  color: white;
+  line-height: 1;
+  border: 1px solid rgba(255,255,255,0);
+  white-space: pre;
+  font-size: 16px;
+  margin-bottom: 1.001px;
+}
+.playerMainShell .listItem svg {
+	vertical-align: middle;
+	position: absolute;
+	right: 13px;
+	width: 18px;
+	height: 18px;
+	fill: black;
+}
+.playerMainShell.smallControlsIcons .listItem svg {
+	top: 9px;
+}
+.playerMainShell.largeControlsIcons .listItem svg {
+	top: 14px;
+}
+.playerMainShell .listItem svg.hbbTvSettingsItemRemoveIcon {
+	fill: white;
+	width: 14px;
+	height: 14px;
+	right: 15px;
+	pointer-events: auto;
+}
+.playerMainShell.settingsLayout4 .listItem svg.hbbTvSettingsItemRemoveIcon {
+	fill: black;
+}
+.playerMainShell .selectedListItem svg.hbbTvSettingsItemRemoveIcon {
+	display: none;
+}
+.playerMainShell .listItem svg.hbbTvSettingsItemLinkedIcon {
+	display: none;
+}
+.playerMainShell .listItem.selectedListItem svg.hbbTvSettingsItemLinkedIcon {
+	display: inline;
+}
+.playerMainShell .listItem:hover {
+  border-color: rgba(255,255,255,1);
+}
+
+.playerMainShell .listItem.selectedListItem {
+  background:  rgba(255,255,255,0.761);
+  color: rgb(14, 17, 29);
+  /** FIME **/
+}
+
+.playerMainShell #showTVsIcon {
+  display: none;
+}
+.playerMainShell.settingsLayout4 #settingsHbbtv .settingsElementArrows{
+  display: none;
+}
+.playerMainShell.settingsLayout4 #settingsHbbtv .settingsSelectorShell,
+.playerMainShell.settingsLayout4 #addTvBtn {
+  display: block;
+  float: left;
+  box-sizing: border-box;
+  min-width: initial;
+}
+.playerMainShell.settingsLayout4 #settingsHbbtv .settingsSelectorShell {
+	width: 50%;
+}
+.playerMainShell.settingsLayout4 #addTvBtn {
+	width: 47%;
+	margin-left: 2%;
+}
+.playerMainShell.settingsLayout4 #settingsHbbtv .settingsSelectorList {
+	width: auto;
+}
+.playerMainShell.smallControlsIcons.settingsLayout4 #addTvBtn {
+	height: 36px;
+	line-height: 34px;
+    box-sizing: border-box;
+    padding: 0;
+}
+.playerMainShell.largeControlsIcons.settingsLayout4 #addTvBtn {
+	height: 48px;
+	line-height: 46px;
+    box-sizing: border-box;
+    padding: 0;
+}
+.playerMainShell.settingsLayout4 #showTVsIcon{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 2px;
+  background: rgba(256,256,256,0.6);
+}
+.playerMainShell.smallControlsIcons.settingsLayout4 #showTVsIcon{
+  padding: 8px;
+  height: 36px;
+}
+.playerMainShell.largeControlsIcons.settingsLayout4 #showTVsIcon{
+  padding: 14px;
+  height: 48px;
+}
+.playerMainShell.settingsLayout4 #showTVsIcon svg{
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+.playerMainShell #settingsQuality .value{
+  padding: 9px 0 5px 5px;
+  width: 30px;
+  height: 20px;
+  font-size: 12px;
+}
+.playerMainShell.settingsLayout4 #settingsHbbtv .settingsSelectorPlaceholder{
+  display: none;
+}
+.playerMainShell.settingsLayout4 #settingsHbbtv .settingsSelectorList {
+  top: 100%;
+}
+/** layouty **/
+.playerMainShell.settingsLayout1 #settingsDiv {
+  bottom: 41px;
+  right: 77px; /* pro settings.fixedLayout */
+}
+.playerMainShell.settingsLayout2 #settingsDiv {
+  right: 4px;
+}
+.playerMainShell.smallControlsIcons.settingsLayout2 #settingsDiv {
+  bottom: 81px;
+}
+.playerMainShell.largeControlsIcons.settingsLayout2 #settingsDiv {
+  bottom: 88px;
+}
+.playerMainShell.settingsLayout3 #settingsDiv,
+.playerMainShell.settingsLayout4 #settingsDiv {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.playerMainShell .innerPageActive #settingsControls,
+.playerMainShell.settingsLayout4 #settingsControls,
+.playerMainShell.settingsLayout3 #settingsControls {
+  display: block;
+}
+/* pravy sloupec a umisteni obsahu */
+.playerMainShell.settingsLayout1 #rightColumn,
+.playerMainShell.settingsLayout2 #rightColumn {
+  vertical-align: bottom;
+}
+.playerMainShell.settingsLayout4 #rightColumn {
+  display: none;
+}
+
+.playerMainShell.settingsLayout1 #settingsContent,
+.playerMainShell.settingsLayout2 #settingsContent {
+  height: 100%;
+}
+/* umisteni nadpisu vlevo */
+.playerMainShell.settingsLayout2 .settingsElement,
+.playerMainShell.settingsLayout4 .settingsElement {
+  display: table-row;
+}
+.playerMainShell.settingsLayout2 .settingsElement.notAvailable,
+.playerMainShell.settingsLayout4 .settingsElement.notAvailable {
+  display: none;
+}
+.playerMainShell.settingsLayout2 .settingsElementTitle,
+.playerMainShell.settingsLayout4 .settingsElementTitle {
+  display: table-cell;
+  padding: 0 5px 0 24px;
+  vertical-align: middle;
+}
+.playerMainShell.settingsLayout2 #settingsQuality .settingsElementTitle {
+	vertical-align: top;
+	padding-top: 17px;
+}
+/* velikost tlacitek */
+.playerMainShell .listItem:first-child{
+  border-radius: 2px 2px 0 0;
+}
+.playerMainShell .listItem:last-child{
+  border-radius: 0 0 2px 2px;
+}
+.playerMainShell.smallControlsIcons .listItem,
+.playerMainShell.smallControlsIcons #addTvBtn {
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 10px;
+  height: 26px;
+}
+.playerMainShell.largeControlsIcons .listItem,
+.playerMainShell.largeControlsIcons #addTvBtn{
+  height: 32px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 16px;
+}
+.playerMainShell.smallControlsIcons .dropDown .listItem,
+.playerMainShell.largeControlsIcons .dropDown .listItem {
+  padding-right: 40px;
+}
+.playerMainShell.smallControlsIcons #settingsHbbtv .listItem,
+.playerMainShell.largeControlsIcons #settingsHbbtv .listItem,
+.playerMainShell.smallControlsIcons #settingsHbbtv .dropDown .listItem,
+.playerMainShell.largeControlsIcons #settingsHbbtv .dropDown .listItem {
+  padding-right: 44px;
+}
+.playerMainShell.smallControlsIcons .settingsElementArrows {
+  top: 15px;
+  right: 14px;
+}
+.playerMainShell.largeControlsIcons .settingsElementArrows{
+  top: 21px;
+  right: 14px;
+}
+.playerMainShell.settingsLayout3 #settingsContent,
+.playerMainShell.settingsLayout4 #settingsContent {
+  margin-left: auto;
+  margin-right: auto;
+}
+.playerMainShell.settingsLayout3 .innerPageActive #settingsContent,
+.playerMainShell.settingsLayout4 .innerPageActive #settingsContent {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.playerMainShell #settingsContentScroller {
+  overflow-y: visible;
+}
+
+.playerMainShell.settingsLayout3 #settingsContentScroller,
+.playerMainShell.settingsLayout4 #settingsContentScroller {
+  overflow-y: auto;
+  margin-right: 33px;
+  height: 100%;
+}
+.playerMainShell.settingsLayout3 .innerPageActive #settingsContentScroller {
+  margin-right: 0;
+}
+.playerMainShell.settingsLayout3 #settingsContentWrapper,
+.playerMainShell.settingsLayout4 #settingsContentWrapper {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* layouty - rozbalovani */
+
+.playerMainShell.settingsLayout1 #settingsAudio .settingsSelectorList,
+.playerMainShell.settingsLayout2 #settingsAudio .settingsSelectorList,
+.playerMainShell.settingsLayout1 #settingsSubtitles .settingsSelectorList.manyListItems,
+.playerMainShell.settingsLayout2 #settingsSubtitles .settingsSelectorList.manyListItems {
+  bottom: 0;
+  top: initial;
+}
+
+.playerMainShell .controlsExited #subtitlesShell.subtitlesLayout2,
+.playerMainShell.hiddenOverlay #subtitlesShell.subtitlesLayout2 {
+  bottom: 36px;
+}
+.playerMainShell #subtitlesShell.subtitlesLayout2 {
+  font-size: 24px;
+  bottom: 76px;
+}
+.playerMainShell .controlsExited #subtitlesShell.subtitlesLayout4,
+.playerMainShell.hiddenOverlay #subtitlesShell.subtitlesLayout4 {
+  bottom: 24px;
+}
+.playerMainShell #subtitlesShell.subtitlesLayout4 {
+  font-size: 24px;
+  bottom: 64px;
+}
+.playerMainShell .controlsExited #subtitlesShell.subtitlesLayout5,
+.playerMainShell.hiddenOverlay #subtitlesShell.subtitlesLayout5 {
+  bottom: 18px;
+}
+.playerMainShell #subtitlesShell.subtitlesLayout5 {
+  font-size: 18px;
+  bottom: 62px;
+}
+.playerMainShell .controlsExited #subtitlesShell.subtitlesLayout7,
+.playerMainShell.hiddenOverlay #subtitlesShell.subtitlesLayout7 {
+  bottom: 18px;
+}
+.playerMainShell #subtitlesShell.subtitlesLayout7 {
+  font-size: 16px;
+  bottom: 62px;
+}
+.playerMainShell .controlsExited #subtitlesShell.subtitlesLayout8,
+.playerMainShell.hiddenOverlay #subtitlesShell.subtitlesLayout8 {
+  bottom: 6px;
+}
+.playerMainShell #subtitlesShell.subtitlesLayout8 {
+  font-size: 14px;
+  bottom: 50px;
+}
+
+.playerMainShell #addTvBtn {
+  border: solid 1px rgba(255,255,255,0.651);
+  border-radius: 2px;
+  text-align: center;
+  color: #ffffff;
+  background: none;
+  /*height: 30px;*/
+  line-height: 1;
+  font: inherit;
+  min-width: 150px;
+}
+.playerMainShell #volumeShell {
+  position: relative;
+}
+
+.playerMainShell #volumeShell #volumeBtn-0,
+.playerMainShell #volumeShell #volumeBtn-50 {
+  display: none;
+}
+.playerMainShell #volumeBarShell {
+  display: none;
+  background: rgba(14,17,29,0.86);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  padding: 15px 0;
+  z-index: 5;
+}
+.playerMainShell.volumeScreenActive #volumeBarShell {
+  display: block;
+}
+.playerMainShell #volumeBarContentsWrapper,
+.playerMainShell #volumeBarContents {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.playerMainShell #volumeBarTrack,
+.playerMainShell #volumeBarFilledTrack {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+.playerMainShell #volumeBarThumb {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  -moz-transform:  translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 50%);
+  left: 50%;
+  bottom: 100%;
+  border-radius: 50%;
+  box-shadow: 0 2px 0 0 rgba(14,17,29,0.25);
+  background: white;
+  pointer-events: none;
+}
+.playerMainShell #volumeBarThumb svg{
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+.playerMainShell #volumeBar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  -webkit-appearance: slider-vertical;
+  opacity: 0.01;
+  z-index: 5;
+}
+.playerMainShell #volumeBar::-ms-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  border: 0 none;
+  background: transparent;
+}
+.playerMainShell #volumeBar::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  border: 0 none;
+  background: transparent;
+}
+.playerMainShell #volumeBar::-webkit-slider-thumb {
+  width: 10px;
+  height: 26px;
+  border-radius: 0;
+  border: 0 none;
+  -webkit-appearance: none;
+}
+
+.playerMainShell #fullScreenBtn #smallScreen {
+  display: none;
+}
+
+.playerMainShell #hbbTvBtn #disconnected {
+  display: none;
+}
+.playerMainShell #hbbTvListArea {
+	display: none;
+	position: absolute;
+	right: 0;
+	bottom: 100%;
+    background: rgba(14,17,29,0.859);
+    padding: 20px;
+    cursor: initial;
+	text-align: center;
+}
+.playerMainShell.hbbTvScreenActive #hbbTvListArea {
+	display: block;
+}
+.playerMainShell #hbbTvListTitle {
+	margin-bottom: 10px;
+}
+.playerMainShell #hbbTvList {
+	cursor: pointer;
+}
+.playerMainShell #hbbTvOverlay,
+.playerMainShell #hbbTvOverlayImage {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.playerMainShell #hbbTvOverlay {
+	display: none;
+}
+.playerMainShell.hbbTvActive #hbbTvOverlay {
+	display: block;
+}
+.playerMainShell #videoButtons .videoButtonShell:hover #hbbTvList svg {
+	fill: black;
+}
+.playerMainShell.breakpoint1 #videoButtons {
+  float: right;
+}
+.playerMainShell.breakpoint1 .controlBtnBackground,
+.playerMainShell.breakpoint2 .controlBtnBackground{
+  bottom: 0;
+}
+.playerMainShell.breakpoint3 .controlBtnBackground{
+  top: 0;
+}
+.playerMainShell.breakpoint1 #seekBarAndSwitch {
+  overflow: hidden;
+  display: block;
+}
+.playerMainShell.breakpoint1 #volumeBarShell {
+  bottom: 100%;
+  border-radius: 3px 3px 0 0;
+}
+.playerMainShell.breakpoint2 #seekBarAndSwitch {
+  width: 100%;
+  clear: both;
+  display: block;
+}
+.playerMainShell.breakpoint1 #seekBarAndSwitch {
+  height: 37px;
+}
+.playerMainShell.breakpoint2 #seekBarAndSwitch, 
+.playerMainShell.breakpoint3 #seekBarAndSwitch {
+  height: 44px;
+}
+
+.playerMainShell.breakpoint2 #volumeBarShell {
+  bottom: 100%;
+  border-radius: 3px 3px 0 0;
+}
+.playerMainShell.breakpoint3 #controls {
+  height: 100%;
+}
+.playerMainShell.breakpoint3 #seekBarAndSwitch {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.playerMainShell.breakpoint3 #volumeBarShell {
+  top: 100%;
+  height: 102px;
+  border-radius: 0 0 3px 3px;
+}
+
+.playerMainShell #subtitlesShell{
+  position: absolute;
+  margin: auto;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+  font-size: 34px;
+  color: #ffffff;
+}
+.playerMainShell #twoLineSubtitlesLine1,
+.playerMainShell #twoLineSubtitlesLine2{
+  background: rgba(23,27,28,0.788);
+  display: inline-block;
+  padding: 1ex;
+}
+.playerMainShell #twoLineSubtitlesLine1:empty,
+.playerMainShell #twoLineSubtitlesLine2:empty{
+  padding: 0;
+}
+.playerMainShell #twoLineSubtitlesShell{
+  display: none;
+  padding: 4px;
+  text-align: center;
+}
+.playerMainShell #oneLineSubtitlesShell{
+  display: none;
+  padding: 4px;
+  text-align: center;
+  background: rgba(23,27,28,0.788);
+}
+::-webkit-media-text-track-container{
+  display: none;
+}
+::cue-region,
+::cue {
+  display: none;
+}
+
+.playerMainShell #skipShell {
+  display: none;
+  position: relative;
+  top: 8px;
+  left: 0;
+  width: 143px;
+  height: 59px;
+  margin: auto;
+  background: rgba(14,17,29,0.473);
+  border: 1px solid rgba(255,255,255,0);
+  border-radius: 3px;
+  font-size: 17px;
+  text-align: center;
+}
+.playerMainShell #skipContents {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.playerMainShell #skipShell.canSkip {
+  border: 1px solid white;
+}
+.playerMainShell #skipBtn {
+  display: none;
+}
+.playerMainShell #skipShell.canSkip #skipBtn {
+  display: block;
+}
+.playerMainShell #skipShell.canSkip #skipText,
+.playerMainShell #skipShell.canSkip #skipSecsLeft {
+	display: none;
+}
+.playerMainShell #skipBtn svg {
+	width: 13px;
+	height: 13px;
+	fill: white;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+.playerMainShell #skipText {
+	font-size: 14px;
+}
+.playerMainShell #skipSecsLeft {
+	margin-top: 3px;
+}
+.playerMainShell #nextInSeriesOverlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: linear-gradient(rgba(0,0,0,0.81961) 0%, rgba(0,0,0,0.23922));
+  background: -webkit-linear-gradient(rgba(0,0,0,0.81961) 0%, rgba(0,0,0,0.23922));
+  background: -o-linear-gradient(rgba(0,0,0,0.81961) 0%, rgba(0,0,0,0.23922));
+  background: -moz-linear-gradient(rgba(0,0,0,0.81961) 0%, rgba(0,0,0,0.23922));
+  text-align: center;
+}
+.playerMainShell #nextInSeriesContent {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  -ms-transform:  translateY(-50%);
+  -moz-transform:  translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.playerMainShell.nextInSeriesLayout1 #nextInSeriesLine1,
+.playerMainShell.nextInSeriesLayout1 #nextInSeriesLine3 {
+	font-size: 22px;
+}
+.playerMainShell.nextInSeriesLayout1 #nextInSeriesLine2 {
+	font-size: 33px;
+	margin: 15px 0;
+}
+.playerMainShell.nextInSeriesLayout2 #nextInSeriesLine1,
+.playerMainShell.nextInSeriesLayout2 #nextInSeriesLine3 {
+	font-size: 19px;
+}
+.playerMainShell.nextInSeriesLayout2 #nextInSeriesLine2 {
+	font-size: 28px;
+	margin: 14px 0;
+}
+.playerMainShell.nextInSeriesLayout3 #nextInSeriesLine1,
+.playerMainShell.nextInSeriesLayout3 #nextInSeriesLine3 {
+	font-size: 15px;
+}
+.playerMainShell.nextInSeriesLayout3 #nextInSeriesLine2 {
+	font-size: 19px;
+	margin: 6px 0;
+}
+.playerMainShell #nextInSeriesLine4 {
+	font-size: 14px;
+}
+.playerMainShell.nextInSeriesLayout1 #nextInSeriesLine4 {
+	margin-top: 51px;
+}
+.playerMainShell.nextInSeriesLayout2 #nextInSeriesLine4 {
+	margin-top: 35px;
+}
+.playerMainShell.nextInSeriesLayout3 #nextInSeriesLine4 {
+	margin-top: 21px;
+}
+.playerMainShell #nextInSeriesButtonShell {
+	display: inline-block;
+	width: 200px;
+  	height: 52px;
+  	line-height: 52px;
+  	border-radius: 4px;
+  	background: rgba(14, 17, 29, 0.788);
+  	color: white;
+  	text-align: center;
+  	vertical-align: top;
+  	position: relative;
+  	overflow: visible;
+}
+.playerMainShell #nextInSeriesBtn {
+	margin: 2px;
+}
+.playerMainShell #skipNextInCountdownSvg {
+  stroke-width: 4px;
+  stroke: white;
+  fill: none;
+  stroke-dasharray: 498;
+  stroke-dashoffset: 498;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes nextInSeriesDash {
+  from {
+    stroke-dashoffset: 500;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.playerMainShell #middleSeriesReplayBtn {
+	display: none;
+	margin: 2px 0 2px 50px;
+	height: 48px;
+	width: 48px;
+  	vertical-align: top;
+}
+.playerMainShell.nextInSeriesLayout2 #middleSeriesReplayBtn {
+	display: inline-block;
+}
+.playerMainShell #bottomSeriesReplayBtn {
+	display: none;
+	position: absolute;
+	left: 50%;
+	margin-left: -32px;
+	bottom: 48px;
+	height: 64px;
+	width: 64px;
+}
+.playerMainShell.nextInSeriesLayout1 #bottomSeriesReplayBtn {
+	display: inline-block;
+}
+.playerMainShell .seriesReplayBtn {
+	position: relative;
+}
+.playerMainShell .seriesReplayBtn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.playerMainShell .seriesReplayBtn svg.circle {
+  	fill: rgba(14, 17, 29, 0.788);
+}
+
+.playerMainShell #loadingOverlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+.playerMainShell #loadingOverlay #loadingAnimationCircle {
+  display: block;
+  margin: auto;
+  position: relative;
+  top: 40%;
+  background: #ffffff;
+
+  font-size: 10px;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+.playerMainShell #loadingOverlay #loadingAnimationCircle:before{
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.playerMainShell #loadingOverlay #loadingAnimationCircle:after{
+  background: #000000;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    transform: rotate(0deg);
+    -ms-transform:  rotate(0deg);
+    -moz-transform:  rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -ms-transform:  rotate(360deg);
+    -moz-transform:  rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+	-ms-transform:  rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+	-ms-transform:  rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.playerMainShell #loadingOverlay #loadingAnimationText {
+  display: block;
+  margin: auto;
+  position: relative;
+  top: 43%;
+  width: 80%;
+  text-align: center;
+  color: #ffffff;
+}
+.playerMainShell #loadingOverlay #loadingAnimationBar {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 24px;
+  width: 100%;
+  background-color: gray;
+}
+.playerMainShell #loadingOverlay #loadingAnimationBar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg, 
+    rgba(255, 255, 255, .2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, .2) 50%,
+    rgba(255, 255, 255, .2) 75%,
+    transparent 75%,
+    transparent
+  );
+  z-index: 10;
+  background-size: 100px 100px;
+  animation: move 2s linear infinite;
+  overflow: hidden;
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+.playerMainShell #errorOverlay{
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(5, 10, 28);
+  text-align: center;
+}
+.playerMainShell #errorVerticalAligner {
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	width: 90%;
+	transform: translateY(-50%);
+	-ms-transform:  translateY(-50%);
+  -moz-transform:  translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.playerMainShell #errorOverlay {
+  color: rgba(255, 255, 255, 0.839);
+  font-size: 18px;
+  line-height: 1.444;
+}
+.playerMainShell.errorLayout2 #errorOverlay {
+  font-size: 14px;
+  line-height: 1.429;
+}
+.playerMainShell #errorOverlay #errorButtonsShell {
+  font-size: 16px;
+  color: white;
+}
+.playerMainShell.errorLayout2 #errorOverlay #errorButtonsShell {
+  font-size: 14px;
+  color: white;
+}
+.playerMainShell #errorOverlay #errorIcon,
+.playerMainShell #errorOverlay #errorLine1,
+.playerMainShell #errorOverlay #errorLine2,
+.playerMainShell #errorOverlay #errorButtonsShell {
+  display: block;
+  text-align: center;
+}
+.playerMainShell #errorOverlay #errorIcon svg{
+  width: 32px;
+  height: 26px;
+}
+.playerMainShell #errorOverlay .errorSmallIcon {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+    vertical-align: middle;
+    position: relative;
+}
+.playerMainShell #errorOverlay .errorButtonText {
+	display: inline;
+	vertical-align: middle;
+}
+.playerMainShell.errorLayout2 #errorOverlay .errorSmallIcon {
+	width: 24px;
+	height: 24px;
+}
+.playerMainShell #errorOverlay .errorSmallIcon svg{
+	position: absolute;
+}
+.playerMainShell #errorOverlay .errorSmallIcon svg.circle {
+  fill: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.playerMainShell #errorOverlay .errorSmallIcon svg.icon {
+  fill: black;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+}
+.playerMainShell #errorOverlay #errorIcon{
+  margin-bottom: 26px;
+}
+.playerMainShell.errorLayout2 #errorOverlay #errorIcon{
+  margin-bottom: 15px;
+}
+.playerMainShell #errorOverlay #errorReloadShell,
+.playerMainShell #errorOverlay #errorHelpShell{
+  padding: 21px 10px 10px 10px;
+}
+.playerMainShell #errorOverlay #errorReloadShell,
+.playerMainShell #errorOverlay #errorHelpShell {
+  display: inline-block;
+}
+.playerMainShell #errorOverlay #errorReloadText,
+.playerMainShell #errorOverlay #errorHelpText {
+	margin-left: 8px;
+}
+.playerMainShell #errorOverlay #errorReloadShell:hover #errorReloadText,
+.playerMainShell #errorOverlay #errorHelpShell:hover #errorHelpText{
+  text-decoration: underline;
+}
+.playerMainShell.errorLayout2 #errorOverlay #errorHelpText {
+  display: none;
+}
+
+.playerMainShell #editModeShell {
+  display: none;
+  height: 20px;
+  width: 80px;
+  background-color: #000000;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.playerMainShell #audioShell {
+  position: relative;
+}
+.playerMainShell .audioBtn1 {
+  width: 40px;
+  height: 40px;
+  background: rgba(40,43,54,1);
+  display: none;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: center;
+  margin: 0;
+  margin-right: 1.1px;
+}
+.playerMainShell #audioStopBtn {
+  display: inline-block;
+}
+.playerMainShell #audioPlayStopBtnShell{
+  float: left;
+}
+.playerMainShell #audioPlayStopBtnShell,
+.playerMainShell #audioSeekBarShell,
+.playerMainShell #audioShell #volumeShell,
+.playerMainShell #audioSubtitlesShell {
+  display: inline-block;
+}
+.playerMainShell #audioShell {
+  width: 100%;
+}
+.playerMainShell #audioShell #seekBarShell.notLoaded * {
+  visibility: hidden;
+}
+.playerMainShell #audioShell #seekBarShell{
+  background: rgba(78,80,87,1);
+  height: 31px;
+  padding: 9px 0 0 0;
+  z-index: 0;
+}
+.playerMainShell #audioShell #volumeBtn-0,
+.playerMainShell #audioShell #volumeBtn-50,
+.playerMainShell #audioShell #volumeBtn-100,
+.playerMainShell #audioSubtitlesBtn {
+  width: 40px;
+  height: 40px;
+  background: rgba(40,43,54,1);
+  line-height: 40px;
+  text-align: center;
+  bottom: 0;
+  margin: 0 0 0 1px;
+}
+.playerMainShell.settingsScreenActive #audioSubtitlesBtn {
+  position: relative;
+  height: 41px;
+  top: -1px;
+  background: rgba(23,26,28,1);
+}
+.playerMainShell #audioSubtitlesBtn {
+  display: inline-block;
+}
+.playerMainShell #audioShell .audioBtn svg {
+  width: 20px;
+  height: 20px;
+  margin: 8px;
+  fill: #ffffff;
+}
+.playerMainShell #audioShell #volumeShell {
+  float: right;
+}
+.playerMainShell #audioShell #volumeBtn {
+  line-height: 40px;
+  text-align: center;
+}
+.playerMainShell #audioShell #volumeBarShell {
+  bottom: 100%;
+  border-radius: 3px 3px 0 0;
+  left: 1px;
+}
+.playerMainShell #audioSubtitlesShell {
+  position: relative;
+  float: right;
+}
+.playerMainShell #audioSubtitlesShell #settingsSubtitles {
+  display: none;
+  position: absolute;
+  bottom: 42px;
+  right: 0;
+  color: white;
+  background: rgba(23,26,28,1);
+  padding: 6px;
+}
+.playerMainShell.settingsScreenActive #audioSubtitlesShell #settingsSubtitles {
+	display: block;
+}
+.playerMainShell #audioShell #twoLineSubtitlesLine1,
+.playerMainShell #audioShell #twoLineSubtitlesLine2{
+  background: transparent;
+  padding: 0 25px;
+}
+.playerMainShell #audioShell #twoLineSubtitlesLine1 {
+  padding-top: 12px;
+  padding-bottom: 7px;
+}
+.playerMainShell #audioSubtitlesShell.empty {
+  display: none;
+}
+.playerMainShell #audioSubtitlesShell #settingsSubtitles .listItem {
+  height: 36px;
+  line-height: 36px;
+  background: rgba(255,255,255,0.302);
+  color: white;
+  margin: 1.1px;
+  padding: 5px 14px;
+  font-size: 15px;
+  border: 1px solid rgba(255,255,255,0);
+  white-space: nowrap;
+}
+.playerMainShell #audioSubtitlesShell #settingsSubtitles .listItem.selectedListItem {
+  background: rgba(255,255,255,0.761);
+}
+.playerMainShell #audioSubtitlesShell #settingsSubtitles .listItem:hover {
+  border-color: rgba(255,255,255,1);
+}
+
+.playerMainShell #audioShell #subtitlesShell{
+  display: none;
+  position: static;
+  margin-bottom: 1px;
+  background: rgba(242,243,245,1);
+  font-size: 16px;
+  color: rgba(23, 26, 38,1);
+  width: 100%;
+  height: 66px;
+  line-height: 1;
+}
+.playerMainShell #audioShell #subtitlesShell.hasSubtitles {
+	display: block;
+}
+
+.playerMainShell #versionInfoShell {
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  display: none;
+  z-index: 11;
+}
+.playerMainShell #hideVersionInfoBtn {
+  position: absolute;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  top: 6px;
+  right: 6px;
+}
+.playerMainShell #settingsInfoShell,
+.playerMainShell #playlistInfoShell {
+  display: inline-block;
+}
+
+.playerMainShell #newWindowFormShell {
+	display: none;
+}

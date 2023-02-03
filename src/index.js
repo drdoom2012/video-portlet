@@ -28,7 +28,7 @@ export default function main({ portletNamespace, contextPath, portletElementId, 
 
 }
 
-//ReactDOM.render(<AppComponent />, document.getElementById('root'));
+ReactDOM.render(<AppComponent />, document.getElementById('root'));
 
 
 

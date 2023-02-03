@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 
 
 export default class AppComponent extends React.Component {
@@ -70,12 +71,5 @@ function Home() {
   );
 }
 
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard 2</h2>
-    </div>
-  );
-}
 
 

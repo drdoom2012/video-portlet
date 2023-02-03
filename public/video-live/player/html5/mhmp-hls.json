@@ -1,0 +1,22 @@
+{
+  "setup": {
+    "title": "live",
+    "description": "live"
+  },
+  "playlist": [
+    {
+      "type": "live",
+      "id": "",
+      "title": "live",
+      "description": "",
+      "skip": false,
+      "begin": 0,
+      "width": 508,
+      "height": 288,
+      "previewImageUrl": "images/poster_1.jpg",
+      "streamUrls": {
+        "main": "http://80.188.229.140/123-tv-pc.m3u8"
+      }
+    }
+  ]
+}

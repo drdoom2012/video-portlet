@@ -1,0 +1,22 @@
+{
+  "setup": {
+    "title": "live",
+    "description": "live"
+  },
+  "playlist": [
+    {
+      "type": "live",
+      "id": "",
+      "title": "live",
+      "description": "",
+      "skip": false,
+      "begin": 0,
+      "width": 508,
+      "height": 288,
+      "previewImageUrl": "images/poster_1.jpg",
+      "streamUrls": {
+        "main": "http://cdn-ctl01.o2tv.cz:1935/vod-mhmp/smil:MHMP_2019-06-20_z47.smil/manifest.m3u8"
+      }
+    }
+  ]
+}

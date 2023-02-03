@@ -1,0 +1,42 @@
+.playerMainShell .seekElapsed .seekBarLine div,
+.playerMainShell #seekBarThumbCircle {
+	background: PARAM_dvrBarElapsedTimeLineColor;
+}
+
+.playerMainShell #totalTimeInfo,
+.playerMainShell #remainingTimeInfo,
+.playerMainShell .seekBarTimeInfo {
+	color: PARAM_timeFontColor;
+}
+.playerMainShell .overlayBtn svg.icon,
+.playerMainShell .seriesReplayBtn svg.icon {
+	fill: PARAM_skinColorIconPlayer;
+}
+.playerMainShell #liveShell #liveBtn {
+	color: white;
+}
+
+.playerMainShell #liveShell.isLive #liveBtn,
+.playerMainShell #liveShell:hover #liveBtn {
+	color: PARAM_skinButtonForeground;
+}
+
+.playerMainShell.settingsScreenActive #settingsShell svg,
+.playerMainShell.volumeScreenActive #volumeShell svg,
+.playerMainShell.hbbTvScreenActive #hbbTvShell svg,
+.playerMainShell.hbbTvActive #hbbTvShell svg,
+.playerMainShell #videoButtons .videoButtonShell:hover svg,
+.playerMainShell #backInTimeShell:hover svg {
+	fill: PARAM_skinButtonForeground;
+}
+
+.playerMainShell *[tabindex]:focus {
+	outline: 2px solid PARAM_indexLineColor;
+	outline-offset: -2px;
+}
+.playerMainShell .overlayBtn:focus {
+	outline-offset: 0;
+}
+.playerMainShell #addTvCodeInput:focus {
+	outline: none;
+}

@@ -1,0 +1,16 @@
+.list-group .active {
+  background-color: #E20025;
+  border-color: #E20025;
+}
+
+.list-group .active:hover {
+  background-color: #C2202B;
+  border-color: #C2202B;
+  color: #FFFFFF;
+}
+
+.list-group-item:hover {
+  background-color: #484848;
+  border-color: #484848;
+  color: #FFFFFF;
+}
