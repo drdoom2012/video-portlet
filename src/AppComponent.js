@@ -13,27 +13,28 @@ import Dashboard from './pages/Dashboard';
 export default class AppComponent extends React.Component {
   render() {
     return (
-      <div>
+      <main className="main-wrapper">
         <div>
           <div>
-            <span className="tag">Portlet Namespace:</span>
-            <span className="value">{this.props.portletNamespace}</span>
-          </div>
-          <div>
-            <span className="tag">Context Path:</span>
-            <span className="value">{this.props.contextPath}</span>
-          </div>
-          <div>
-            <span className="tag">Portlet Element Id:</span>
-            <span className="value">{this.props.portletElementId}</span>
-          </div>
+            <div>
+              <span className="tag">Portlet Namespace:</span>
+              <span className="value">{this.props.portletNamespace}</span>
+            </div>
+            <div>
+              <span className="tag">Context Path:</span>
+              <span className="value">{this.props.contextPath}</span>
+            </div>
+            <div>
+              <span className="tag">Portlet Element Id:</span>
+              <span className="value">{this.props.portletElementId}</span>
+            </div>
 
-          <div>
-            <span className="tag">Configuration:</span>
-            <span className="value pre">{JSON.stringify(this.props.configuration, null, 2)}</span>
+            <div>
+              <span className="tag">Configuration:</span>
+              <span className="value pre">{JSON.stringify(this.props.configuration, null, 2)}</span>
+            </div>
           </div>
         </div>
-
         <Router>
           <div>
             <ul>
@@ -47,7 +48,6 @@ export default class AppComponent extends React.Component {
                 <Link to="/dashboard">Dashboard</Link>
               </li>
             </ul>
-
             <hr />
           </div>
 
@@ -57,8 +57,7 @@ export default class AppComponent extends React.Component {
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </Router>
-
-      </div>
+      </main>
     );
   }
 }
